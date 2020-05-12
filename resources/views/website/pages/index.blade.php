@@ -8,22 +8,22 @@
 <div id="slides-shop" class="home-section cover-slides">
   <ul class="slides-container">
     <li class="text-center">
-      <img src="{{asset('website/images/slideshow/1.jpg')}}" alt="">
+      <img src="{{asset('website/images/slideshow/slide1.jpg')}}" alt="">
     </li>
     <li class="text-center">
-      <img src="{{asset('website/images/slideshow/2.jpg')}}" alt="">
+      <img src="{{asset('website/images/slideshow/slide2.jpg')}}" alt="">
     </li>
     <li class="text-center">
-      <img src="{{asset('website/images/slideshow/3.jpg')}}" alt="">
+      <img src="{{asset('website/images/slideshow/slide3.jpg')}}" alt="">
     </li>
     <li class="text-center">
-      <img src="{{asset('website/images/slideshow/4.jpg')}}" alt="">
+      <img src="{{asset('website/images/slideshow/slide4.jpg')}}" alt="">
     </li>
+    <!-- <li class="text-center">
+      <img src="{{asset('website/images/slideshow/slide5.jpg')}}" alt="">
+    </li> -->
     <li class="text-center">
-      <img src="{{asset('website/images/slideshow/5.jpg')}}" alt="">
-    </li>
-    <li class="text-center">
-      <img src="{{asset('website/images/slideshow/6.jpg')}}" alt="">
+      <img src="{{asset('website/images/slideshow/slide6.jpg')}}" alt="">
     </li>
   </ul>
   <div class="slides-navigation">
@@ -34,19 +34,18 @@
 <!-- End Slider -->
 
 <!-- Start Blog  -->
-<div class="home-section latest-blog">
+<div class="home-section latest-blog-main">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="title-all text-center">
-          <h1>Our Ingredients</h1>
-          <p>Why we are diffrent?</p>
+        <div class="text-center">
+          <p class="blog-header-discount">10% OFF + FREE SHIPPING on your 1st order</h1>
+          <p class="blog-header-place-order">PLACE YOUR ORDER HERE!</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 col-lg-12 col-xl-12">
-        <img class="img-fluid" src="{{asset('website/images/ingredients.png')}}" alt="">
+      <div class="col-md-12 col-lg-12 col-xl-12 blog-box-content">   
 
       </div>
 
@@ -99,18 +98,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="title-all text-center">
-          <h1>Find us in stores</h1>
+        <div class="text-center">
+          <p class="find-us-header">Find us in stores</h1>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6 col-lg-6 col-xl-6 text-center ">
-        <img class="img-fluid" src="{{asset('website/images/tops.png')}}" alt="tops" />
+        <img class="img-fluid find-us-image" src="{{asset('website/images/tops.png')}}" alt="tops" />
 
       </div>
-      <div class="col-md-6 col-lg-6 col-xl-6 text-center ">
-        <img class="img-fluid" src="{{asset('website/images/amazon.png')}}" alt="amazon" />
+      <div class="col-md-6 col-lg-6 col-xl-6 text-center find-us-box">
+        <img class="img-fluid find-us-image" src="{{asset('website/images/amazon.png')}}" alt="amazon" />
 
       </div>
 

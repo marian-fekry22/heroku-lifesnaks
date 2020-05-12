@@ -344,12 +344,12 @@
      color: #ffffff;
 }
 nav.navbar .navbar-brand img.logo{
-     width: 140px;
+     width: 100px;
 }
 @media (min-width: 1024px) {
     /* Navbar General ------*/
    nav.navbar {
-       height: 80px;
+       height: 63px;
    }
     nav.navbar ul.nav > li > a{
        padding: 30px 15px;
@@ -512,14 +512,15 @@ nav.navbar .navbar-brand img.logo{
 }
  nav.navbar.bootsnav ul.nav > li > a{
      position: relative;
-     font-weight: 700;
-     font-size: 16px;
+     font-weight: normal;
+     font-size: 18px;
      color: #ebe8e2;
 	 text-transform: uppercase;
      padding-top: 10px;
      padding-bottom: 10px;
      padding-left: 10px;
      padding-right: 30px;
+     font-family: sans-serif !important;
 }
  nav.navbar.bootsnav ul.nav li.active > a{
      color: #4c8c40;
@@ -852,14 +853,13 @@ nav.navbar .navbar-brand img.logo{
      padding-bottom: 30px;
 }
  .slides-pagination a{
-     border: 2px solid #ffffff;
-     border-radius: 6px;
-     width: 20px;
-     height: 20px;
+     width: 35px;
+     height: 3px;
 }
  .slides-pagination a.current{
-     background: #4c8c40;
-     border: 2px solid #4c8c40;
+     background: #ffffff;   
+     opacity: 1;
+     height: 3px;
 }
  .cover-slides p a{
      font-size: 24px;
@@ -870,7 +870,7 @@ nav.navbar .navbar-brand img.logo{
 }
 /*------------------------------------------------------------------ Homepage sections -------------------------------------------------------------------*/
 .home-section:nth-child(even) {
-  background-color: white;
+    background-color: #efefef;
 }
 .home-section:nth-child(odd) {
   background-color: #f5f5f5;
@@ -1162,10 +1162,24 @@ nav.navbar .navbar-brand img.logo{
 
 
 /*------------------------------------------------------------------ Blog -------------------------------------------------------------------*/
- .latest-blog{
-     padding: 70px 0px;
-     background: #f5f5f5;
+ .latest-blog-main{
+     padding: 30px 0px;
+     background: url(../images/ingredients_new.jpg) no-repeat center center;     
 }
+
+.latest-blog{
+    padding: 30px 0px;
+    background-color: #fff !important;
+}
+
+
+
+.blog-box-content
+{
+    height:400px; 
+    display:inline-block;
+}
+
  .blog-box{
      -webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
      box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
@@ -1233,6 +1247,25 @@ nav.navbar .navbar-brand img.logo{
 	 padding-top: 0px !important;
      top: 0px !important;
 }
+
+.blog-header-discount
+{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color:black;
+    margin : 5px 0px;
+}
+
+.blog-header-place-order
+{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+    color:black;
+    margin : 5px 0px;
+}
+
 /*------------------------------------------------------------------ Instagram Feed -------------------------------------------------------------------*/
  .instagram-box{
      padding: 70px 0px;
@@ -1400,7 +1433,7 @@ nav.navbar .navbar-brand img.logo{
 	
 }
  .footer-top-box p{
-	 padding-bottom: 15px;
+	 padding-bottom: 5px;
 	 color: #cccccc;
  }
 
@@ -1415,8 +1448,7 @@ nav.navbar .navbar-brand img.logo{
      color: #ffffff;
      display: inline-block;
      width: 36px;
-     height: 36px;
-     border: 2px solid #ffffff;
+     height: 36px;    
      text-align: center;
      line-height: 32px;
 }
@@ -2698,21 +2730,55 @@ nav.navbar .navbar-brand img.logo{
   color: #000000;
 }
 #delivery-schedule-modal .modal-body p {
-  padding: 5px 0px;
+    font-size: 22px;
+    padding: 5px;
 }
 #delivery-schedule-modal .modal-body ul {
-  padding: 5px 25px;
+  padding: 0px 25px;
 }
 #delivery-schedule-modal .modal-body ul li {
   list-style: initial;
+  font-size: 20px;
+  margin: 0px 30px;
+}
+
+#delivery-schedule-modal .modal-header
+{
+    font-size: 24px;
+    padding: 10px 20px;
 }
 #delivery-schedule-modal .modal-body ul li strong{
   color: #4c8c40;
 }
 
+#delivery-schedule-modal .modal-body a{
+    text-decoration:underline !important;
+  }
+
 #leave-review-modal .btn {
   color: #ffffff;
   font-weight: 700;
+}
+
+#delivery-schedule-modal .modal-body
+{
+    font-size: 27px;
+    font-family: sans-serif;
+    font-stretch: ultra-expanded;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;    
+    font-weight: normal;   
+    line-height: 40.5px;
+    margin-block-start: 0px;
+    margin-inline-end: 0px;
+    margin-inline-start: 0px;
+    margin-top: 0px;
+    pointer-events: auto;
+    text-align: left;
+    text-size-adjust: 100%;
+    width: 1051.4px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* ---------------------------------------------- Rating Star Widgets Style ----------------------------------------------*/
@@ -2787,4 +2853,55 @@ nav.navbar .navbar-brand img.logo{
 /* ---------------------------------------------- Accept payment iframe style ----------------------------------------------*/
 .credit-card-box label[for="save card"] {
     display: none !important;
+}
+
+
+.ml-nav-content
+{
+margin-left: 50px;
+
+}
+
+.mt-nav-controls-container
+{
+margin-top: 8px;
+
+}
+
+.find-us-image
+{
+ width: 150px;
+}
+
+
+.find-us-box
+{
+ border-left: 1px solid #eee;
+}
+
+.find-us-header
+{
+    font-size: 32px;
+    font-weight: 700;
+    color: #120f28;
+    padding-bottom: 30px;
+
+}
+
+
+.modal-lg
+{
+    max-width:1083px;
+    margin-top: 150px;
+}
+
+.social-media-icon
+{
+width: 40px;
+}
+
+.social-media-icon-facebook
+{
+    padding-top: 2px;
+width: 36px;
 }

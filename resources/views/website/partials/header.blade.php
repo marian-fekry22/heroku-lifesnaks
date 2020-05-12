@@ -13,8 +13,8 @@
       <!-- End Header Navigation -->
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-menu">
-        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+      <div class="collapse navbar-collapse mt-nav-controls-container" id="navbar-menu">
+        <ul class="nav navbar-nav ml-nav-content" data-in="fadeInDown" data-out="fadeOutUp">
           <li class="nav-item"><a class="nav-link" href="{{url('/')}}">HOME</a></li>
           <li class="nav-item"><a class="nav-link" href="{{route('website.products.index')}}">SHOP</a></li>
           <li class="nav-item"><a class="nav-link" href="{{route('website.contact-us.index')}}">CONTACT US</a></li>
@@ -100,11 +100,6 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Delivery schedule</h3>
-        <button type="button" class="close" data-dismiss="modal">
-          <span>&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
         <p> No more “I can’t find it” - We are one click away, delivering to your door step. LifeSnacks facilitated ordering your favorite snacks online through our website.</p>
         <p class="font-weight-bold">Your order will arrive accordingly (We only deliver to Cairo & Giza)</p>
@@ -114,8 +109,13 @@
           <li><strong>The rest of Cairo &amp; Giza</strong> delivery within 48hrs</li>
         </ul>
         <p class="font-weight-bold">We may need to confirm your order by phone and schedule your suitable delivery time</p>
-        <p>You can reach us by phone Saturday to Thursday from 9am to 5pm. Outside our phone hours, kindly send us an e-mail to customercare@lifesnacks.me</p>
+        <p>You can reach us by phone Saturday to Thursday from 9am to 5pm. Outside our phone hours, kindly send us an e-mail to <a href="mailto:customercare@lifesnacks.me">customercare@lifesnacks.me<a></p>
       </div>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+     
     </div>
   </div>
 </div>

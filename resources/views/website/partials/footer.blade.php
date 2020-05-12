@@ -25,7 +25,8 @@
             <h3>Social Media</h3>
             <p>Follow us on social media platforms.</p>
             <ul>
-              <li><a href="https://instagram.com/lifesnacks_me"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://instagram.com/lifesnacks_me" target="blank"><img class="social-media-icon" src="{{asset('website/images/instagram-icon-png-clip-art.png')}}" aria-hidden="true"></i></a></li>
+              <li><a href="https://facebook.com"  target="blank"><img class="social-media-icon-facebook" src="{{asset('website/images/FaceBook-icon.png')}}" aria-hidden="true"></i></a></li>
               
             </ul>
           </div>
