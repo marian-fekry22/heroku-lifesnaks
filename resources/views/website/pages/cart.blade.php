@@ -76,10 +76,11 @@
             </div>
         </div>
 
-        <div class="row my-5">
+        <div class="row order-summary-container">
+        <div class="row">
             <div class="col-lg-8 col-sm-12">
                 <div class="col-lg-6 col-sm-8">
-                    <div class="coupon-box ">
+                    <div class="coupon-box">
                         <form class="old-form" method="POST" action="{{route('website.orders.apply_promo_code')}}" >
                             @csrf
                             <div class="input-group input-group-sm">
@@ -132,7 +133,8 @@
                     <hr>
                 </div>
             </div>
-            <div class="col-12 d-flex shopping-box"><a href="{{route('website.orders.checkout')}}" class="ml-auto btn hvr-hover">Checkout</a> </div>
+            </div>
+            <div class="col-12 d-flex shopping-box"><a href="{{route('website.orders.checkout')}}" class="ml-auto btn hvr-hover checkout-button">Checkout</a> </div>
         </div>
     </div>
 </div>
