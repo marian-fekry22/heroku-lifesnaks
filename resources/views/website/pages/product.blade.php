@@ -161,15 +161,3 @@
 </div>
 @endsection
 
-@section('js')
-<script>
-    $(document).ready(function(){
-        $('.carousel-item').zoom({
-          magnify: 0.65,
-          callback: function(){
-            $(this).parent().removeAttr('style'); // to fix carousel height issue caused by zoom plugin
-          }
-        })
-    });
-</script>
-@endsection

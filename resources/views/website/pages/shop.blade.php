@@ -7,19 +7,23 @@
 <!-- Start Products  -->
 <div class="products-box">
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-12">
         <div class="title-all text-center">
           <h1>Our Products</h1>
           <p></p>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-lg-12">
-        <div class="special-menu text-center">
-          <div class="button-group filter-button-group">
-            <button class="active" data-filter="*">All</button>
+        <div class="special-menu">
+        <div class="col-lg-3 products-filter-title"> 
+        Shop @ LifeSnacks 
+          </div>         
+          <div class="col-lg-9 button-group filter-button-group">
+            <div class="products-filter-title-border">	&nbsp;</div>
+            <button class="active" data-filter="*">View All</button>
             @foreach($categories as $category)
             <button data-filter=".{{Illuminate\Support\Str::slug($category->name)}}">{{$category->name}}</button>
             @endforeach
@@ -71,8 +75,8 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-lg-6">
-            <img class="img-fluid rel-mid-y" src="{{asset($product->main_image_url)}}" alt="{{$product->name}}">
+          <div class="col-lg-6 text-center">
+            <img class="img-fluid rel-mid-yrel-mid-y quick-shop-modal-image" src="{{asset($product->main_image_url)}}" alt="{{$product->name}}">
           </div>
           <div class="col-lg-6">
             <div class="single-product-details mt-3">
@@ -107,15 +111,4 @@
 <!-- End Quick shop modal  -->
 @endforeach
 
-@endsection
-
-@section('js')
-<script>
-    $(document).ready(function(){
-      console.log($('[id^=quick-shop-modal] .row > div:first-child'));
-        $('[id^=quick-shop-modal] .row > div:first-child').zoom({
-          magnify: 0.35
-        });
-    });
-</script>
 @endsection
