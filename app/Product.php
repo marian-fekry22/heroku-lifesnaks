@@ -16,7 +16,8 @@ class Product extends Model
         'category', 'images','reviews'
     ];
     const ALL_RELATIONS_CONDITIONED = [
-        'category', 'orderedImages','activeReviews'
+        'category', 'orderedImages','activeReviews' , 'fiveStarsReviews'
+        , 'fourStarsReviews' , 'threeStarsReviews' , 'twoStarsReviews' , 'oneStarsReviews'
     ];
 
     // base relations
@@ -41,6 +42,26 @@ class Product extends Model
     public function activeReviews()
     {
         return $this->reviews()->where('is_active',1);
+    }
+    public function fiveStarsReviews()
+    {
+        return $this->reviews()->where('is_active',1)->where('rate' , '5');
+    }
+    public function fourStarsReviews()
+    {
+        return $this->reviews()->where('is_active',1)->where('rate' , '4');
+    }
+    public function threeStarsReviews()
+    {
+        return $this->reviews()->where('is_active',1)->where('rate' , '3');
+    }
+    public function twoStarsReviews()
+    {
+        return $this->reviews()->where('is_active',1)->where('rate' , '2');
+    }
+    public function oneStarsReviews()
+    {
+        return $this->reviews()->where('is_active',1)->where('rate' , '1');
     }
     public function mainImage()
     {

@@ -28,7 +28,12 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::withAllRelationsConditioned()->find($id);
-        return view('website.pages.product', compact('product'));
+        $fivePer = (count($product->fiveStarsReviews)/count($product->activeReviews))*100;
+        $fourPer = (count($product->fourStarsReviews)/count($product->activeReviews))*100;
+        $threePer = (count($product->threeStarsReviews)/count($product->activeReviews))*100;
+        $twoPer = (count($product->twoStarsReviews)/count($product->activeReviews))*100;
+        $onePer = (count($product->oneStarsReviews)/count($product->activeReviews))*100;
+        return view('website.pages.product', compact('product' , 'fivePer' , 'fourPer' , 'threePer' , 'twoPer' , 'onePer'));
     }
 
     public function submitReview (Request $request, $id)
