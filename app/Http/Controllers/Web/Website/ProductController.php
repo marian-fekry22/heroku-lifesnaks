@@ -28,11 +28,11 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::withAllRelationsConditioned()->find($id);
-        $fivePer = (count($product->fiveStarsReviews)/count($product->activeReviews))*100;
-        $fourPer = (count($product->fourStarsReviews)/count($product->activeReviews))*100;
-        $threePer = (count($product->threeStarsReviews)/count($product->activeReviews))*100;
-        $twoPer = (count($product->twoStarsReviews)/count($product->activeReviews))*100;
-        $onePer = (count($product->oneStarsReviews)/count($product->activeReviews))*100;
+        $fivePer = count($product->fiveStarsReviews) == 0 ? 0 : (count($product->fiveStarsReviews)/count($product->activeReviews))*100;
+        $fourPer = count($product->fourStarsReviews) == 0 ? 0 : (count($product->fourStarsReviews)/count($product->activeReviews))*100;
+        $threePer = count($product->threeStarsReviews) == 0 ? 0 : (count($product->threeStarsReviews)/count($product->activeReviews))*100;
+        $twoPer = count($product->twoStarsReviews) == 0 ? 0 : (count($product->twoStarsReviews)/count($product->activeReviews))*100;
+        $onePer = count($product->oneStarsReviews) == 0 ? 0 : (count($product->oneStarsReviews)/count($product->activeReviews))*100;
         return view('website.pages.product', compact('product' , 'fivePer' , 'fourPer' , 'threePer' , 'twoPer' , 'onePer'));
     }
 
