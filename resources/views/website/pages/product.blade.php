@@ -10,7 +10,11 @@
                 <div id="carousel-example-1" class="single-product-slider carousel slide" data-interval="false" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         @foreach($product->orderedImages as $key => $image)
-                        <div class="carousel-item {{$key ? '' : 'active'}}"> <img class="d-block w-100" src="{{asset($image->url)}}" alt="{{$product->name}} {{$image->id}} slide"> </div>
+                        <div class="carousel-item {{$key ? '' : 'active'}}">
+                            <a data-fancybox="gallery" href="{{asset($image->url)}}" alt="{{$product->name}} {{$image->id}} slide">
+                                <img class="d-block w-100" src="{{asset($image->url)}}" alt="{{$product->name}} {{$image->id}} slide">
+                            </a>
+                             </div>
                         @endforeach
                     </div>
                     <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
@@ -157,7 +161,7 @@
             </div>
         </form>
     </div>
-    
+
 </div>
 @endsection
 

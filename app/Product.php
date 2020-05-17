@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $with = ['mainImage'];
     protected $appends = ['main_image_url'];
-    
+
     const ALL_RELATIONS = [
         'category', 'images','reviews'
     ];
@@ -50,7 +50,7 @@ class Product extends Model
     {
         return $this->images()->orderBy('order');
     }
-    
+
     // Accessors
     public function getMainImageUrlAttribute() {
         return $this->mainImage->first()->url ?? null;
