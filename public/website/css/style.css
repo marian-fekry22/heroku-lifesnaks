@@ -638,7 +638,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
 nav.navbar.bootsnav ul.nav>li>a {
     position: relative;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
     color: #ebe8e2;
     text-transform: uppercase;
     padding-top: 10px;
@@ -1329,23 +1329,23 @@ ul.cart-list>li.total>.btn:hover {
     0% {
         transform: translateY(-205px);
     }
-    
+
     40% {
         transform: translateY(-100px);
     }
-    
+
     65% {
         transform: translateY(-52px);
     }
-    
+
     82% {
         transform: translateY(-25px);
     }
-    
+
     92% {
         transform: translateY(-12px);
     }
-    
+
     55%,
     75%,
     87%,
@@ -1358,23 +1358,23 @@ ul.cart-list>li.total>.btn:hover {
     0% {
         -moz-transform: translateY(-205px);
     }
-    
+
     40% {
         -moz-transform: translateY(-100px);
     }
-    
+
     65% {
         -moz-transform: translateY(-52px);
     }
-    
+
     82% {
         -moz-transform: translateY(-25px);
     }
-    
+
     92% {
         -moz-transform: translateY(-12px);
     }
-    
+
     55%,
     75%,
     87%,
@@ -1387,23 +1387,23 @@ ul.cart-list>li.total>.btn:hover {
     0% {
         -webkit-transform: translateY(-205px);
     }
-    
+
     40% {
         -webkit-transform: translateY(-100px);
     }
-    
+
     65% {
         -webkit-transform: translateY(-52px);
     }
-    
+
     82% {
         -webkit-transform: translateY(-25px);
     }
-    
+
     92% {
         -webkit-transform: translateY(-12px);
     }
-    
+
     55%,
     75%,
     87%,
@@ -2670,12 +2670,12 @@ ul.cart-list>li.total>.btn:hover {
     0% {
         opacity: 0.3;
     }
-    
+
     40% {
         opacity: 0.5;
         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #4c8c40, 0 0 0 10px rgba(0, 53, 68, 0.5);
     }
-    
+
     100% {
         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #4c8c40, 0 0 0 10px rgba(0, 53, 68, 0.5);
         -webkit-transform: scale(1.5);
@@ -2686,12 +2686,12 @@ ul.cart-list>li.total>.btn:hover {
     0% {
         opacity: 0.3;
     }
-    
+
     40% {
         opacity: 0.5;
         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #4c8c40, 0 0 0 10px rgba(0, 53, 68, 0.5);
     }
-    
+
     100% {
         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #4c8c40, 0 0 0 10px rgba(0, 53, 68, 0.5);
         -moz-transform: scale(1.5);
@@ -2702,12 +2702,12 @@ ul.cart-list>li.total>.btn:hover {
     0% {
         opacity: 0.3;
     }
-    
+
     40% {
         opacity: 0.5;
         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #4c8c40, 0 0 0 10px rgba(0, 53, 68, 0.5);
     }
-    
+
     100% {
         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(0, 53, 68, 0.5);
         transform: scale(1.5);
@@ -3034,7 +3034,7 @@ ul.cart-list>li.total>.btn:hover {
 .rating-stars ul>li.star>i.fa {
     font-size: 2.5em;
     /* Change the size of the stars */
-    
+
     color: #ccc;
     /* Color on idle state */
 }

@@ -58,13 +58,14 @@ group( function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
     Route::post('contact-us', 'ContactUsController@store')->name('contact-us.store');
+    Route::get('about-us', 'AboutUsController@index')->name('about-us');
     Route::get('products', 'ProductController@index')->name('products.index');
     Route::get('products/{id}/{slug}', 'ProductController@show')->name('products.show');
     Route::post('carts/add', 'CartController@add')->name('carts.add');
     Route::get('carts/remove/{id}', 'CartController@remove')->name('carts.remove');
     Route::get('carts/plus/{id}', 'CartController@plus')->name('carts.plus');
     Route::get('carts/minus/{id}', 'CartController@minus')->name('carts.minus');
-    
+
     Route::middleware('cart.items')->group( function () {
         Route::get('view-cart', 'CartController@view')->name('carts.view');
     });
@@ -81,9 +82,9 @@ group( function () {
         Route::get('profile/edit', 'ProfileController@edit')->name('profile.edit');
         Route::patch('profile', 'ProfileController@update')->name('profile.update');
     });
-    
+
     Route::get('paymob_notification_callback', 'PaymentController@notification')->name('payment.notification');
 
     Route::get('paymob_txn_response_callback', 'PaymentController@response')->name('payment.response');
-    
+
 });

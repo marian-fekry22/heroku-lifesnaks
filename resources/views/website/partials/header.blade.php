@@ -17,8 +17,9 @@
         <ul class="nav navbar-nav ml-nav-content" data-in="fadeInDown" data-out="fadeOutUp">
           <li class="nav-item"><a class="nav-link" href="{{url('/')}}">HOME</a></li>
           <li class="nav-item"><a class="nav-link" href="{{route('website.products.index')}}">SHOP</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('website.about-us')}}">ABOUT US</a></li>
           <li class="nav-item"><a class="nav-link" href="{{route('website.contact-us.index')}}">CONTACT US</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#delivery-schedule-modal">DELIVERY SCHEDULE</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#delivery-schedule-modal">DELIVERY SCHEDULE</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
