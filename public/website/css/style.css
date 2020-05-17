@@ -3350,11 +3350,11 @@ ul.cart-list>li.total>.btn:hover {
 /* Selected state of the stars */
 
 .rating-stars ul>li.star.selected>i.fa {
-    color: #FF912C;
+    color: #ffc107;
 }
 
 .star-filled {
-    color: #FF912C;
+    color: #ffc107;
 }
 
 .star-empty {

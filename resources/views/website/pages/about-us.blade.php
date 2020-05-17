@@ -5,9 +5,8 @@
 @section('content')
 
 <!-- Start About Us  -->
-
-        <div id="slides-shop" class="home-section cover-slides">
-            <img  style="width: 100%"  src="{{asset('website/images/aboutus-page.png')}}" alt="">
+        <div  style="padding-left: 0px; padding-right: 0px;">
+            <img  style="width:100%"  src="{{asset('website/images/aboutus-page.png')}}" alt="">
         </div>
         <div class="row" style="padding:3% ;background-color:#9CC798 ;">
             <div class="col-lg-6" style="line-height: 200%;font-size: 18px">
