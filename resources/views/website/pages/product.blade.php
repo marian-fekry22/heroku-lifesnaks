@@ -70,6 +70,20 @@
                     <h2>Product Reviews</h2>
                 </div>
                 <div class="card-body">
+                    <div class="stars">
+                        @for ($i = 1; $i < 6; $i++)
+                        <span class="fa fa-star star-{{$i > $product->activeReviews->avg('rate') ? 'empty' : 'filled'}}"></span>
+                        @endfor
+                    </div>
+                    <span style="font-weight: bold;">{{count($product->activeReviews)}} customer ratings</span>
+                    <div>
+                        <span style="font-weight: bold;">5 Stars </span> <meter id="disk_c_5" value="{{$fivePer}}" min="0" max="10">{{$fivePer}}</meter><span style="font-weight: bold;"> {{$fivePer}}%</span><br/>
+                        <span style="font-weight: bold;">4 Stars </span><meter id="disk_c_4" value="{{$fourPer}}" min="0" max="10">{{$fourPer}}</meter><span style="font-weight: bold;"> {{$fourPer}}%</span><br/>
+                        <span style="font-weight: bold;">3 Stars </span><meter id="disk_c_3" value="{{$threePer}}" min="0" max="10">{{$threePer}}</meter><span style="font-weight: bold;"> {{$threePer}}%</span><br/>
+                        <span style="font-weight: bold;">2 Stars </span><meter id="disk_c_2" value="{{$twoPer}}" min="0" max="10">{{$twoPer}}</meter><span style="font-weight: bold;"> {{$twoPer}}%</span><br/>
+                        <span style="font-weight: bold;">1 Stars </span><meter id="disk_c_2" value="{{$onePer}}" min="0" max="10">{{$onePer}}</meter><span style="font-weight: bold;"> {{$onePer}}%</span><br/>
+                    </div>
+                    <hr>
                     @if(count($product->activeReviews))
                     @foreach($product->activeReviews as $review)
                     <div class="media mb-3">
