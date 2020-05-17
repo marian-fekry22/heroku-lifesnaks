@@ -1,7 +1,14 @@
 @extends('website.layouts.app')
 
 @section('title','Shop')
-
+<style>
+    meter::-webkit-meter-optimum-value {
+        background: #ffce00;
+    }
+    meter::-moz-meter-bar { /* Firefox Pseudo Class */
+        background: #ffce00;
+    }
+</style>
 @section('content')
 <div class="shop-detail-box-main">
     <div class="container">
@@ -72,34 +79,33 @@
                 <div class="card-body">
                     <div class="stars">
                         @for ($i = 1; $i < 6; $i++)
-                        <span class="fa fa-star star-{{$i > $product->activeReviews->avg('rate') ? 'empty' : 'filled'}}"></span>
+                        <span style="font-size: 30px;" class="fa fa-star star-{{$i > $product->activeReviews->avg('rate') ? 'empty' : 'filled'}}"></span>
                         @endfor
                     </div>
                     <span style="font-weight: bold;">{{count($product->activeReviews)}} customer ratings</span>
                     <div>
-                        <span style="font-weight: bold;">5 Stars </span> <meter id="disk_c_5" value="{{$fivePer}}" min="0" max="10">{{$fivePer}}</meter><span style="font-weight: bold;"> {{$fivePer}}%</span><br/>
-                        <span style="font-weight: bold;">4 Stars </span><meter id="disk_c_4" value="{{$fourPer}}" min="0" max="10">{{$fourPer}}</meter><span style="font-weight: bold;"> {{$fourPer}}%</span><br/>
-                        <span style="font-weight: bold;">3 Stars </span><meter id="disk_c_3" value="{{$threePer}}" min="0" max="10">{{$threePer}}</meter><span style="font-weight: bold;"> {{$threePer}}%</span><br/>
-                        <span style="font-weight: bold;">2 Stars </span><meter id="disk_c_2" value="{{$twoPer}}" min="0" max="10">{{$twoPer}}</meter><span style="font-weight: bold;"> {{$twoPer}}%</span><br/>
-                        <span style="font-weight: bold;">1 Stars </span><meter id="disk_c_2" value="{{$onePer}}" min="0" max="10">{{$onePer}}</meter><span style="font-weight: bold;"> {{$onePer}}%</span><br/>
+                        <span style="font-weight: bold;">5 Stars </span> <meter id="disk_c_5" value="{{$fivePer}}" min="0" max="10" style="width: 25%">{{$fivePer}}</meter><span style="font-weight: bold;"> {{$fivePer}}%</span><br/>
+                        <span style="font-weight: bold;">4 Stars </span><meter id="disk_c_4" value="{{$fourPer}}" min="0" max="10" style="width: 25%">{{$fourPer}}</meter><span style="font-weight: bold;"> {{$fourPer}}%</span><br/>
+                        <span style="font-weight: bold;">3 Stars </span><meter id="disk_c_3" value="{{$threePer}}" min="0" max="10" style="width: 25%">{{$threePer}}</meter><span style="font-weight: bold;"> {{$threePer}}%</span><br/>
+                        <span style="font-weight: bold;">2 Stars </span><meter id="disk_c_2" value="{{$twoPer}}" min="0" max="10" style="width: 25%">{{$twoPer}}</meter><span style="font-weight: bold;"> {{$twoPer}}%</span><br/>
+                        <span style="font-weight: bold;">1 Stars </span><meter id="disk_c_1" value="{{$onePer}}" min="0" max="10" style="width: 25%">{{$onePer}}</meter><span style="font-weight: bold;"> {{$onePer}}%</span><br/>
                     </div>
-                    <hr>
                     @if(count($product->activeReviews))
                     @foreach($product->activeReviews as $review)
-                    <div class="media mb-3">
-
-                        <div class="media-body">
+                    <div class="media mb-3" style="margin-top: 2%">
+                        <div class="media-body" style="padding:3% ; min-width:100px ;max-width:330px ; border:1px solid #4c8c40;margin: 3%">
                             <div class="stars">
                                 @for ($i = 1; $i < 6; $i++)
-                                <span class="fa fa-star star-{{$i > $review->rate ? 'empty' : 'filled'}}"></span>
+                                <span style="font-size: 30px;"  class="fa fa-star star-{{$i > $review->rate ? 'empty' : 'filled'}}"></span>
                                 @endfor
 
                             </div>
                             <p>{{$review->description}}</p>
                             <small class="text-muted">Posted {{$review->created_at->diffForHumans()}} by <strong>{{$review->user->name}}</strong></small>
                         </div>
+
+
                     </div>
-                    <hr>
                     @endforeach
                     @else
                     <h2>No reviews found for this product, be the first.</h2>
