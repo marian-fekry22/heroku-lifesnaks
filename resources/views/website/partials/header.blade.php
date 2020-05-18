@@ -23,7 +23,12 @@
         </ul>
       </div>
       <!-- /.navbar-collapse -->
-
+<!-- Start Atribute Navigation social media-->
+      <div class="attr-nav">
+      <a href="#"><i class="fa fa-fa"></i></a>
+      <a href="#"><i class="fa fa-home"></i></a>
+      </div>
+<!-- End Atribute Navigation -->
       <!-- Start Atribute Navigation -->
       <div class="attr-nav">
         <ul>

@@ -396,18 +396,6 @@ p {
     color: #4c8c40;
 }
 
-.attr-nav>ul>li>a:hover {
-    color: #4c8c40;
-}
-
-nav.navbar.bootsnav {
-    background-color: #120f28;
-}
-
-nav.navbar.bootsnav ul.nav>li>a {
-    margin: 0px;
-}
-
 
 /* Navbar Adjusment =========================== */
 
@@ -416,6 +404,23 @@ nav.navbar.bootsnav ul.nav>li>a {
 
 .attr-nav>ul>li>a {
     padding: 28px 15px;
+    color: #4c8c40;
+}
+
+.attr-nav>ul>li>a:hover {
+    color: black;
+}
+
+nav.navbar.bootsnav {
+    background-color: #fff;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+    left: 0;
+    margin-right: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    height: 75px;
 }
 
 ul.cart-list>li.total>.btn {
@@ -428,7 +433,7 @@ ul.cart-list>li.total>.btn {
 }
 
 nav.navbar .navbar-brand img.logo {
-    width: 100px;
+    width: 150px;
 }
 
 @media (min-width: 1024px) {
@@ -636,24 +641,19 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
 }
 
 nav.navbar.bootsnav ul.nav>li>a {
-    position: relative;
-    font-weight: normal;
+    border-left: 1px solid #eee;
+    border-bottom: 3px solid #fff;
     font-size: 16px;
-    color: #ebe8e2;
-    text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 30px;
-    font-family: sans-serif !important;
+    letter-spacing: 2px;
+    margin-bottom: -1px;
+    margin-right: -4px;
+    padding: 21px 25px;
+    position: relative;
+    color: #198d42;
 }
 
-nav.navbar.bootsnav ul.nav li.active>a {
-    color: #4c8c40;
-}
-
-nav.navbar.bootsnav ul.nav li.active>a:hover {
-    color: #4c8c40;
+nav.navbar.bootsnav ul.nav li>a:hover {
+    border-bottom: 3px solid #4c8c40;
 }
 
 nav.navbar.bootsnav ul.nav li>a:hover {
@@ -3411,12 +3411,13 @@ ul.cart-list>li.total>.btn:hover {
 }
 
 .ml-nav-content {
-    margin-left: 50px;
+    margin-left: 140px;
 }
 
-.mt-nav-controls-container {
+
+/* .mt-nav-controls-container {
     margin-top: 8px;
-}
+} */
 
 .find-us-image {
     width: 150px;
@@ -3451,7 +3452,7 @@ ul.cart-list>li.total>.btn:hover {
 /* ---------------------------------------------- Cart Hover ----------------------------------------------*/
 
 .dropbtn {
-    color: white;
+    color: #4c8c40;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -3644,4 +3645,8 @@ ul.cart-list>li.total>.btn:hover {
 
 .carousel-item a {
     cursor: zoom-in;
+}
+
+#slides-shop {
+    padding-top: 75px;
 }
