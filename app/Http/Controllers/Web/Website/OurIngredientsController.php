@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web\Website;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AboutUsController extends Controller
+class OurIngredientsController extends Controller
 {
     /**
      * Display Contact us page.
@@ -15,7 +15,7 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        return view('website.pages.about-us');
+        return view('website.pages.our-ingredients');
     }
 
 }
