@@ -59,6 +59,7 @@ group( function () {
     Route::get('contact-us', 'ContactUsController@index')->name('contact-us.index');
     Route::post('contact-us', 'ContactUsController@store')->name('contact-us.store');
     Route::get('about-us', 'AboutUsController@index')->name('about-us');
+    Route::get('our-ingredients', 'OurIngredientsController@index')->name('our-ingredients');
     Route::get('products', 'ProductController@index')->name('products.index');
     Route::get('products/{id}/{slug}', 'ProductController@show')->name('products.show');
     Route::post('carts/add', 'CartController@add')->name('carts.add');

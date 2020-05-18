@@ -638,7 +638,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
 nav.navbar.bootsnav ul.nav>li>a {
     position: relative;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
     color: #ebe8e2;
     text-transform: uppercase;
     padding-top: 10px;
@@ -3266,4 +3266,24 @@ ul.cart-list>li.total>.btn:hover {
 }
 .quick-shop-modal-image {
     height: 400px;
+}
+.text-center {
+    text-align: center !important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
+}
+.w-100 {
+    width: 100% !important;
+}
+h4[_ngcontent-hdo-c5]{
+    color:#4c8c40;
+    font-size:1.5rem;
+    font-weight: 500;
+    line-height:1.2;
+}
+h5[_ngcontent-hdo-c5]{
+    font-size:1.2rem;
+    font-weight: 500;
+    line-height:1.2;
 }
