@@ -64,8 +64,8 @@ group( function () {
     Route::get('products/{id}/{slug}', 'ProductController@show')->name('products.show');
     Route::post('carts/add', 'CartController@add')->name('carts.add');
     Route::get('carts/remove/{id}', 'CartController@remove')->name('carts.remove');
-    Route::get('carts/plus/{id}', 'CartController@plus')->name('carts.plus');
-    Route::get('carts/minus/{id}', 'CartController@minus')->name('carts.minus');
+    Route::get('carts/plus/{id}/{product_details_id}', 'CartController@plus')->name('carts.plus');
+    Route::get('carts/minus/{id}/{product_details_id}', 'CartController@minus')->name('carts.minus');
 
     Route::middleware('cart.items')->group( function () {
         Route::get('view-cart', 'CartController@view')->name('carts.view');

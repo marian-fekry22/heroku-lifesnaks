@@ -44,28 +44,35 @@
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details">
                     <h2>{{$product->name}}</h2>
-                    <h5> EGP {{moneyFormat($product->price)}}</h5>
                     <h4>Description:</h4>
                     <p>{{$product->description}} </p>
+                    @foreach($product->productDetails as $productDetail)
                     <form method="POST" action="{{route('website.carts.add')}}" >
                         @csrf
                         <input type='hidden' name='product_id' value='{{$product->id}}'>
-                        <ul>
-                            <li>
-                                <div class="form-group quantity-box">
-                                    <label class="control-label">Quantity</label>
-                                    <input class="form-control" name='quantity' value="1" min="1" max="100" type="number">
+                            <div class="row">
+                                <div class="col-xl-2 col-lg-2 col-md-2">
+                                    <h5>{{$productDetail->size}}</h5>
                                 </div>
-                            </li>
-                        </ul>
-
+                                <div class="col-xl-2 col-lg-2 col-md-2">
+                                    <h5> EGP {{moneyFormat($productDetail->price)}}</h5>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-2">
+                                    <div class="form-group">
+                                        <input class="form-control" name='quantity' value="1" min="1" max="100" type="number">
+                                    </div>
+                                </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3">
                         <div class="price-box-bar">
                             <div class="cart-and-bay-btn">
-                                <button class="btn btn-lg btn-block hvr-hover"  type='submit' >Add to cart</button>
+                                <button class="btn btn-sm btn-block hvr-hover"  type='submit' >Add to cart</button>
                             </div>
                         </div>
+                     </div>
+                    <input type='hidden' name='product_detail_id' value='{{$productDetail->id}}'>
+                     </div>
                     </form>
-
+                    @endforeach
 
                 </div>
             </div>

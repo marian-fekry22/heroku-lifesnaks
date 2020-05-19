@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Website;
 use App\Helpers\Cart;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\ProductDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,27 +15,30 @@ class CartController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'product_id' => 'required|integer|exists:products,id',
+            'product_detail_id' => 'required|integer',
             'quantity' => 'required|integer',
         ]);
 
         if ($validator->fails()) {
             return back()->withError(['description' => 'Something went wrong']);
         }
-
         $product = Product::find($request->product_id);
+        $productDetails = ProductDetail::find($request->product_detail_id);
 
         $cartItems = session('cart.items');
-        
-        if (isset($cartItems[$product->id])) { // if product already exists
-            $cartItems[$product->id]['quantity'] += $request->quantity ;
-            $cartItems[$product->id]['sub_total_per_product'] = $product->price * $cartItems[$product->id]['quantity'];
+        if (isset($cartItems[$product->id.$productDetails->id])) { // if product already exists
+            $cartItems[$product->id.$productDetails->id]['quantity'] += $request->quantity ;
+            $cartItems[$product->id.$productDetails->id]['sub_total_per_product'] = $productDetails->price * $cartItems[$product->id.$productDetails->id]['quantity'];
         } else {
-            $cartItems[$product->id] = [ // if product not in cart
+            $cartItems[$product->id.$productDetails->id] = [ // if product not in cart
+                'product_id' => $product->id,
+                'product_details_id' => $productDetails->id,
                 'name' => $product->name,
                 'quantity' => $request->quantity,
-                'price_per_item' => $product->price,
+                'price_per_item' => $productDetails->price,
                 'image_url' => $product->main_image_url,
-                'sub_total_per_product' => $product->price * $request->quantity
+                'size' => $productDetails->size ,
+                'sub_total_per_product' => $productDetails->price * $request->quantity,
             ];
         }
 
@@ -55,19 +59,20 @@ class CartController extends Controller
         return redirect()->route('website.carts.view');
     }
 
-    public function minus($id)
+    public function minus(Request $request)
     {
         $cartItems = session('cart.items');
-        $product = Product::find($id);
+        $product = Product::find($request->id);
+        $productDetails = ProductDetail::find($request->product_details_id);
 
-        if (isset($cartItems[$product->id])) {
+        if (isset($cartItems[$product->id.$productDetails->id])) {
 
-            --$cartItems[$product->id]['quantity'];
+            --$cartItems[$product->id.$productDetails->id]['quantity'];
 
-            if (!$cartItems[$product->id]['quantity']) { // if quantity equals 0 remove the product
-                unset($cartItems[$product->id]);
+            if (!$cartItems[$product->id.$productDetails->id]['quantity']) { // if quantity equals 0 remove the product
+                unset($cartItems[$product->id.$productDetails->id]);
             } else {
-                $cartItems[$product->id]['sub_total_per_product'] = $product->price * $cartItems[$product->id]['quantity'];
+                $cartItems[$product->id.$productDetails->id]['sub_total_per_product'] = $product->price * $cartItems[$product->id.$productDetails->id]['quantity'];
             }
 
             Cart::updateSession($cartItems);
@@ -78,16 +83,17 @@ class CartController extends Controller
 
     }
 
-    public function plus($id)
+    public function plus(Request $request)
     {
         $cartItems = session('cart.items');
-        $product = Product::find($id);
+        $product = Product::find($request->id);
+        $productDetails = ProductDetail::find($request->product_details_id);
 
-        if (isset($cartItems[$product->id])) {
+        if (isset($cartItems[$product->id.$productDetails->id])) {
 
-            ++$cartItems[$product->id]['quantity'];
+            ++$cartItems[$product->id.$productDetails->id]['quantity'];
 
-            $cartItems[$product->id]['sub_total_per_product'] = $product->price * $cartItems[$product->id]['quantity'];
+            $cartItems[$product->id.$productDetails->id]['sub_total_per_product'] = $productDetails->price * $cartItems[$product->id.$productDetails->id]['quantity'];
 
             Cart::updateSession($cartItems);
         }
@@ -115,7 +121,7 @@ class CartController extends Controller
         session(['cart.is_reviewed' => true]);
 
         $order = session('order');
-        
+
         return view('website.pages.cart', compact('order'));
     }
 }

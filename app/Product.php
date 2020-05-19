@@ -13,7 +13,7 @@ class Product extends Model
     protected $appends = ['main_image_url'];
 
     const ALL_RELATIONS = [
-        'category', 'images','reviews'
+        'category', 'images','reviews' , 'productDetails'
     ];
     const ALL_RELATIONS_CONDITIONED = [
         'category', 'orderedImages','activeReviews' , 'fiveStarsReviews'
@@ -37,8 +37,12 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Order');
     }
+    public function productDetails()
+    {
+        return $this->hasMany('App\ProductDetail');
+    }
 
-    // conditioned relations
+        // conditioned relations
     public function activeReviews()
     {
         return $this->reviews()->where('is_active',1);

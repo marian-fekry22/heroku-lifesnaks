@@ -85,6 +85,14 @@
                       <div class="col-9"> <a href="{{route('website.products.show',['id' => $id, 'slug' => Illuminate\Support\Str::slug($item['name'])])}}" class="cart-itme-title">{{$item['name']}}</a></div>
                     </div>
                     <div class="row">
+                        <div class="col-2">
+                            <div class="col-12 cart-itme-details-header">
+                                Size
+                            </div>
+                            <div class="col-12 cart-itme-details-value">
+                                {{$item['size']}}
+                            </div>
+                        </div>
                       <div class="col-4">
                         <div class="col-12 cart-itme-details-header">
                           Each
@@ -93,11 +101,11 @@
                           EGP {{moneyFormat($item['price_per_item'])}}
                         </div>
                       </div>
-                      <div class="col-4">
+                      <div class="col-2">
                         <div class="col-12 cart-itme-details-header">
                           QTY
                         </div>
-                        <div class="col-12 cart-itme-details-value">
+                        <div class="col-2 cart-itme-details-value">
                           {{$item['quantity']}}
                         </div>
                       </div>

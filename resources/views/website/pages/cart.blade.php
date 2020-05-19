@@ -22,6 +22,7 @@
                             <tr>
                                 <th>Image</th>
                                 <th>Product Name</th>
+                                <th>Size</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
@@ -33,25 +34,28 @@
                                 @if($cart['items'] && count($cart['items']))
                                 @foreach($cart['items'] as $id =>$item)
                                 <td class="thumbnail-img">
-                                    <a href="{{route('website.products.show',['id' => $id, 'slug' => Illuminate\Support\Str::slug($item['name'])])}}">
+                                    <a href="{{route('website.products.show',['id' => $item['product_id'], 'slug' => Illuminate\Support\Str::slug($item['name'])])}}">
                                         <img class="img-fluid" src="{{asset($item['image_url'])}}" alt="" />
                                     </a>
                                 </td>
                                 <td class="name-pr">
-                                    <a href="{{route('website.products.show',['id' => $id, 'slug' => Illuminate\Support\Str::slug($item['name'])])}}">
+                                    <a href="{{route('website.products.show',['id' => $item['product_id'], 'slug' => Illuminate\Support\Str::slug($item['name'])])}}">
                                         {{$item['name']}}
                                     </a>
                                 </td>
+                                    <td class="name-pr">
+                                      {{$item['size']}}
+                                        </td>
                                 <td class="price-pr">
                                     <p>{{moneyFormat($item['price_per_item'])}}</p>
                                 </td>
                                 <td class="quantity-box">
 
-                                    <a href="{{ route('website.carts.minus', ['id' => $id]) }}">
+                                    <a href="{{ route('website.carts.minus', ['id' => $item['product_id'] , 'product_details_id'=>$item['product_details_id']]) }}">
                                         <i class="fas fa-minus"></i>
                                     </a> 	&nbsp;
                                     {{$item['quantity']}} 	&nbsp;
-                                    <a href="{{ route('website.carts.plus', ['id' => $id]) }}">
+                                    <a href="{{ route('website.carts.plus', ['id' => $item['product_id'] , 'product_details_id'=>$item['product_details_id']]) }}">
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </td>
@@ -59,7 +63,7 @@
                                     <p>{{moneyFormat($item['sub_total_per_product'])}}</p>
                                 </td>
                                 <td class="remove-pr">
-                                    <a href="{{ route('website.carts.remove', ['id' => $id]) }}">
+                                    <a href="{{ route('website.carts.remove', ['id' => $id ]) }}">
                                         <i class="fas fa-times"></i>
                                     </a>
                                 </td>
@@ -104,8 +108,8 @@
                     <hr class="my-1">
                     <div class="d-flex">
                         <h4>Promo Code Discount</h4>
-                        <div class="ml-auto font-weight-bold"> 
-                            @if($order['promo_code_discount_amount'])        
+                        <div class="ml-auto font-weight-bold">
+                            @if($order['promo_code_discount_amount'])
                             - EGP {{moneyFormat($order['promo_code_discount_amount'])}}
                             @else
                             -
@@ -117,8 +121,8 @@
 
                     <div class="d-flex">
                         <h4>Delivery Fees</h4>
-                        <div class="ml-auto font-weight-bold"> 
-                            @if($order['delivery_fees'])        
+                        <div class="ml-auto font-weight-bold">
+                            @if($order['delivery_fees'])
                             EGP {{moneyFormat($order['delivery_fees'])}}
                             @else
                             Free
