@@ -15,7 +15,6 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse mt-nav-controls-container" id="navbar-menu">
         <ul class="nav navbar-nav ml-nav-content" data-in="fadeInDown" data-out="fadeOutUp">
-          <li class="nav-item"><a class="nav-link" href="{{url('/')}}">HOME</a></li>
           <li class="nav-item"><a class="nav-link" href="{{route('website.products.index')}}">SHOP</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('website.our-ingredients')}}">OUR INGREDIENTS</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('website.about-us')}}">ABOUT US</a></li>
@@ -26,12 +25,12 @@
       <!-- /.navbar-collapse -->
 <!-- Start Atribute Navigation social media-->
       <div class="attr-nav">
-      <a href="#"><i class="fa fa-fa"></i></a>
-      <a href="#"><i class="fa fa-home"></i></a>
+      <a target="_blank" href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+      <a target="_blank" href="https://instagram.com/lifesnacks_me"><i class="fa fa-instagram"></i></a>
       </div>
 <!-- End Atribute Navigation -->
       <!-- Start Atribute Navigation -->
-      <div class="attr-nav">
+      <div class="attr-nav attr-nav-controls">
         <ul>
           <li class="side-menu side-menu-user">
             <a href="#"><i class="fa fa-user"></i></a>
