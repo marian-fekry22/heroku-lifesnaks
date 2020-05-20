@@ -43,7 +43,7 @@ class CartController extends Controller
         }
 
         Cart::updateSession($cartItems);
-
+        session()->flash('product_id', $product->id);
         return redirect()->route('website.products.index');
     }
 

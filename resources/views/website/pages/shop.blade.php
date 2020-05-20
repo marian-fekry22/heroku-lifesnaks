@@ -117,7 +117,16 @@
     </div>
   </div>
 </div>
+@if (session()->has('product_id'))
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            $("#quick-shop-modal-{{session('product_id')}}").modal('show');
+        });
+    </script>
+@endif
+
 <!-- End Quick shop modal  -->
 @endforeach
 
 @endsection
+

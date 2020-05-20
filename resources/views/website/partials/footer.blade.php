@@ -11,7 +11,7 @@
             <p> No more “I can’t find it” - We are one click away, delivering to your door step. LifeSnacks facilitated ordering your favorite snacks online through our website.</p>
             <p>Your order will arrive accordingly (We only deliver to Cairo & Giza)</p>
             <ul class="list-time">
-              <li>New Cairo delivery within 24hrs</li> 
+              <li>New Cairo delivery within 24hrs</li>
               <li>Heliopolis delivery within 24hrs</li>
                <li>The rest of Cairo & Giza delivery within 48hrs</li>
             </ul>
@@ -19,7 +19,7 @@
             <p>You can reach us by phone Saturday to Thursday from 9am to 5pm. Outside our phone hours, kindly send us an e-mail to customercare@lifesnacks.me</p>
           </div>
         </div>
-        
+
         <div class="col-lg-4 col-md-12 col-sm-12">
           <div class="footer-top-box">
             <h3>Social Media</h3>
@@ -27,7 +27,7 @@
             <ul>
               <li><a href="https://instagram.com/lifesnacks_me" target="blank"><img class="social-media-icon" src="{{asset('website/images/instagram-icon-png-clip-art.png')}}" aria-hidden="true"></i></a></li>
               <li><a href="https://facebook.com"  target="blank"><img class="social-media-icon-facebook" src="{{asset('website/images/FaceBook-icon.png')}}" aria-hidden="true"></i></a></li>
-              
+
             </ul>
           </div>
         </div>
@@ -50,7 +50,7 @@
         </div>
 
       </div>
-     
+
     </div>
   </div>
 </footer>
@@ -58,7 +58,7 @@
 
 <!-- Start copyright  -->
 <div class="footer-copyright">
-  <p class="footer-company">All Rights Reserved. &copy; {{date('Y')}} <a href="#">{{config('app.name')}}</a> 
+  <p class="footer-company">All Rights Reserved. &copy; {{date('Y')}} <a href="#">{{config('app.name')}}</a>
   </p>
 </div>
 <!-- End copyright  -->
