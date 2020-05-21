@@ -41,11 +41,8 @@
                 <!-- <p class="sale">Sale</p> -->
               </div>
               <img src="{{asset($product->main_image_url)}}" class="img-fluid" alt="Image">
-              <div class="mask-icon">
-                <ul>
-                  <li><a href="{{route('website.products.show',['id' => $product->id, 'slug' => Illuminate\Support\Str::slug($product->name)])}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                </ul>
-                <a class="cart" href="#" data-toggle="modal" data-target="#quick-shop-modal-{{$product->id}}">Quick shop</a>
+              <div class="mask-icon">               
+                <a class="cart" href="#" data-toggle="modal" data-target="#quick-shop-modal-{{$product->id}}">Quick Shop</a>
               </div>
             </div>
             <div class="why-text">
@@ -88,13 +85,13 @@
                         @csrf
                         <input type='hidden' name='product_id' value='{{$product->id}}'>
                         <div class="row">
-                            <div class="col-xl-2 col-lg-2 col-md-2">
+                            <div class="col-xl-2 col-lg-2 col-md-2 p-0 mt-2">
                                 <h5>{{$productDetail->size}}</h5>
                             </div>
-                            <div class="col-xl-2 col-lg-2 col-md-2">
+                            <div class="col-xl-2 col-lg-2 col-md-2 p-0 mt-2">
                                 <h5> EGP {{moneyFormat($productDetail->price)}}</h5>
                             </div>
-                            <div class="col-xl-3 col-lg-3 col-md-2">
+                            <div class="col-xl-3 col-lg-3 col-md-2 p-0">
                                 <div class="form-group">
                                     <input class="form-control" name='quantity' value="1" min="1" max="100" type="number">
                                 </div>

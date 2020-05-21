@@ -82,7 +82,7 @@
                   <li class="cart-item">
                     <div class="row">
                       <div class="col-3"> <a href="#" class="photo"><img src="{{asset($item['image_url'])}}" class="cart-itme-image" alt="" /></a></div>
-                      <div class="col-9"> <a href="{{route('website.products.show',['id' => $id, 'slug' => Illuminate\Support\Str::slug($item['name'])])}}" class="cart-itme-title">{{$item['name']}}</a></div>
+                      <div class="col-9"> <a href="{{route('website.products.show',['id' => $id, 'slug' => Illuminate\Support\Str::slug($item['name'])])}}" class="cart-itme-title">{{$item['name']}} {{$item['size']}}</a></div>
                     </div>
                     <div class="row">
                       <div class="col-4">
@@ -187,7 +187,7 @@
             <li><strong>The rest of Cairo &amp; Giza</strong> delivery within 48hrs</li>
           </ul>
           <p class="font-weight-bold">We may need to confirm your order by phone and schedule your suitable delivery time</p>
-          <p>You can reach us by phone Saturday to Thursday from 9am to 5pm. Outside our phone hours, kindly send us an e-mail to <a href="mailto:customercare@lifesnacks.me">customercare@lifesnacks.me<a></p>
+          <p>You can reach us by phone Saturday to Thursday from 9am to 5pm. Outside our phone hours, kindly send us an e-mail to <a href="mailto:customercare@lifesnacks.me">customercare@lifesnacks.me</a></p>
         </div>
         <button type="button" class="close" data-dismiss="modal">
           <span>&times;</span>

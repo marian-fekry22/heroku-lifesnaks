@@ -33,6 +33,18 @@
 </div>
 <!-- End Slider -->
 
+<!-- Start Section 2  -->
+<div class="home-section-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <img src="{{asset('website/images/section-2.png')}}" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Section 2  -->
+
 <!-- Start Blog  -->
 <div class="home-section latest-blog-main">
   <div class="container">
@@ -40,12 +52,12 @@
       <div class="col-lg-12">
         <div class="text-center">
           <p class="blog-header-discount">10% OFF + FREE SHIPPING on your 1st order</h1>
-          <p class="blog-header-place-order">PLACE YOUR ORDER HERE!</p>
+            <p class="blog-header-place-order">PLACE YOUR ORDER HERE!</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 col-lg-12 col-xl-12 blog-box-content">   
+      <div class="col-md-12 col-lg-12 col-xl-12 blog-box-content">
 
       </div>
 
@@ -93,6 +105,38 @@
   </div>
 </div>
 <!-- End About Page -->
+
+
+@if(isset($instagramMedia) && count($instagramMedia))
+<!-- Start Instagram Feed  -->
+<div class="instagram-box">
+  <div class="row m-0">
+    <div class="col-lg-12">
+      <div class="text-center">
+        <p class="find-us-header">Follow us on Instagram</h1>
+      </div>
+    </div>
+  </div>
+  <div class="main-instagram owl-carousel owl-theme">
+    @foreach($instagramMedia as $oneMedia)
+    <div class="item">
+      <div class="ins-inner-box">
+        <img src="{{$oneMedia['thumbnail_url'] ?? $oneMedia['media_url']}}" alt="" />
+        <div class="hov-in">
+          <a href="{{$oneMedia['permalink']}}">
+            <div class="ins-inner-box-hover-counts pull-left w-100">
+              <div class="ins-inner-box-hover-comments w-50 pull-left"><i class="fa fa-heart-o"></i>{{$oneMedia['like_count'] ?? '532'}}</div>
+              <div class="ins-inner-box-hover-likes w-50  pull-left"><i class="fa fa-comment-o"></i>{{$oneMedia['comments_count'] ?? '32'}}</div>
+            </div>
+            <div class="ins-inner-box-hover-caption pull-left w-100">{{$oneMedia['caption'] ?? 'Caption Caption Caption Caption Caption Caption Caption Caption Caption Caption Caption Caption'}}</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    @endforeach
+  </div>
+</div>
+<!-- End Instagram Feed  -->
 <!-- Start Blog  -->
 <div class="home-section latest-blog">
   <div class="container">
@@ -104,8 +148,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-lg-6 col-xl-6 text-center ">
-        <img class="img-fluid find-us-image" src="{{asset('website/images/tops.png')}}" alt="tops" />
+      <div class="col-md-6 col-lg-6 col-xl-6 text-center find-us-tops-box">
+        <img class="img-fluid find-us-image" src="{{asset('website/images/Tops_Markets_logo.png')}}" alt="tops" />
 
       </div>
       <div class="col-md-6 col-lg-6 col-xl-6 text-center find-us-box">
@@ -117,23 +161,5 @@
   </div>
 </div>
 <!-- End Blog  -->
-
-@if(isset($instagramMedia) && count($instagramMedia))
-<!-- Start Instagram Feed  -->
-<div class="instagram-box">
-  <div class="main-instagram owl-carousel owl-theme">
-    @foreach($instagramMedia as $oneMedia)
-    <div class="item">
-      <div class="ins-inner-box">
-        <img src="{{$oneMedia['thumbnail_url'] ?? $oneMedia['media_url']}}" alt="" />
-        <div class="hov-in">
-          <a href="{{$oneMedia['permalink']}}"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-    @endforeach
-  </div>
-</div>
-<!-- End Instagram Feed  -->
 @endif
 @endsection

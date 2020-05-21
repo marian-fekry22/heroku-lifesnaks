@@ -80,7 +80,7 @@
                                                 <img class="img-fluid" src="{{asset($item['image_url'])}}" alt="" />
                                             </a>
                                             <a href="{{route('website.products.show', ['id' => $id, 'slug' => Illuminate\Support\Str::slug($item['name'], "-"), ])}}">
-                                                {{$item['name']}}
+                                                {{$item['name']}} {{$item['size']}}
                                             </a>
                                             <div class="text-muted">Price: EGP {{moneyFormat($item['price_per_item'])}} <span class="mx-2">|</span> Qty: {{$item['quantity']}} <span class="mx-2">|</span> Subtotal: EGP {{moneyFormat($item['sub_total_per_product'])}}</div>
                                         </div>

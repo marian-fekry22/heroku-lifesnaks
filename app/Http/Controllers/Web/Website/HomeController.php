@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         try {
-            $response = Http::get('https://graph.instagram.com/me/media?fields=thumbnail_url,media_url,permalink&access_token='.config('services.instagram.generated_token'));
+            $response = Http::get('https://graph.instagram.com/me/media?fields=thumbnail_url,media_url,permalink,comments_count,like_count,caption&access_token='.config('services.instagram.generated_token'));
             $instagramMedia = $response->json()['data'];
             return view('website.pages.index', compact('instagramMedia'));
         } catch (\Exception $e) {

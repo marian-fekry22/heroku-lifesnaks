@@ -947,10 +947,11 @@ ul.cart-list>li.total>.btn:hover {
 
 .cover-slides img {
     max-width: 100% !important;
-    height: calc(100vh - 80px) !important;
+    height: calc(100vh) !important;
     /* 80px is navbar height */
     top: 0px !important;
     left: 0px !important;
+    margin-top: -20px;
 }
 
 @media (max-width: 1200px) {
@@ -1075,15 +1076,24 @@ ul.cart-list>li.total>.btn:hover {
     padding: 10px 20px;
 }
 
+.slides-pagination {
+    margin-bottom: 40px;
+}
+
 
 /*------------------------------------------------------------------ Homepage sections -------------------------------------------------------------------*/
 
+.home-section-2 {
+    background-color: #ffffff;
+    padding: 30px 0px;
+}
+
 .home-section:nth-child(even) {
-    background-color: #efefef;
+    background-color: #ffffff;
 }
 
 .home-section:nth-child(odd) {
-    background-color: #f5f5f5;
+    background-color: #efefef;
 }
 
 
@@ -1268,12 +1278,13 @@ ul.cart-list>li.total>.btn:hover {
 .why-text {
     background: #f5f5f5;
     padding: 15px;
+    text-align: center;
 }
 
 .why-text h4 {
     font-size: 16px;
     font-weight: 700;
-    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
 .why-text h5 {
@@ -1313,16 +1324,12 @@ ul.cart-list>li.total>.btn:hover {
 }
 
 .mask-icon a.cart {
-    background: #4c8c40;
     position: absolute;
-    bottom: 0;
-    left: 0px;
-    padding: 5px 10px;
+    top: 120px;
+    left: 119px;
+    padding: 8px 32px;
     font-weight: 700;
-    color: #ffffff;
-}
-
-.mask-icon a.cart:hover {
+    font-size: 20px;
     background: #120f28;
     color: #ffffff;
 }
@@ -1442,6 +1449,7 @@ ul.cart-list>li.total>.btn:hover {
 .latest-blog-main {
     padding: 30px 0px;
     background: url(../images/ingredients_new.jpg) no-repeat center center;
+    background-color: #efefef;
 }
 
 .latest-blog {
@@ -1555,7 +1563,7 @@ ul.cart-list>li.total>.btn:hover {
 /*------------------------------------------------------------------ Instagram Feed -------------------------------------------------------------------*/
 
 .instagram-box {
-    padding: 70px 0px;
+    padding: 30px 0px;
     background: whitesmoke;
     background-size: auto auto;
     -webkit-background-size: cover;
@@ -1565,69 +1573,76 @@ ul.cart-list>li.total>.btn:hover {
     background-size: cover;
 }
 
-.instagram-box::before {
-    background: rgba(18, 15, 40, 0.95);
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    content: "";
-    position: absolute;
-    z-index: 0;
-}
-
 .main-instagram.owl-carousel .owl-nav button.owl-prev {
     position: absolute;
     z-index: 1;
     display: block;
-    height: 100%;
+    height: 50px;
     width: 50px;
     line-height: 0px;
     font-size: 24px;
     cursor: pointer;
     color: #ffffff;
-    top: 0;
+    top: 110px;
     padding: 0;
     margin-top: 0;
-    opacity: 1;
     left: 0px;
+    opacity: .3;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    background: rgba(18, 15, 40, 0.7);
+    border-radius: 20px;
 }
 
 .main-instagram.owl-carousel .owl-nav button.owl-next {
     position: absolute;
     z-index: 1;
     display: block;
-    height: 100%;
+    height: 50px;
     width: 50px;
     line-height: 0px;
     font-size: 24px;
     cursor: pointer;
     color: #ffffff;
-    top: 0;
+    top: 110px;
     padding: 0;
     margin-top: 0;
-    opacity: 1;
+    opacity: .3;
     right: 0px;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    background: rgba(18, 15, 40, 0.7);
+    border-radius: 20px;
 }
 
 .main-instagram.owl-carousel .owl-nav button.owl-next:hover,
 .main-instagram.owl-carousel .owl-nav button.owl-prev:hover {
-    background: rgba(18, 15, 40, 0.7);
+    opacity: 1;
 }
 
 .ins-inner-box {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
     position: relative;
+}
+
+.ins-inner-box:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    bottom: -7px;
+    border: 3px solid#ffffff;
+    border-radius: 5px;
 }
 
 .hov-in {
     opacity: 0;
-    background: rgba(18, 15, 40, 0.5);
+    background: black;
     bottom: -100%;
     position: absolute;
     width: 100%;
@@ -1639,16 +1654,18 @@ ul.cart-list>li.total>.btn:hover {
     transition: all 0.3s ease-out 0.5s;
     text-align: center;
     display: table;
+    color: #ffffff;
 }
 
 .hov-in a {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     height: 100%;
+    padding-top: 30px;
 }
 
 .hov-in i {
-    color: #120f28;
+    color: #ffffff;
     font-size: 48px;
     position: relative;
     z-index: 2;
@@ -1660,7 +1677,48 @@ ul.cart-list>li.total>.btn:hover {
 
 .ins-inner-box:hover .hov-in {
     bottom: 0;
-    opacity: 1;
+    opacity: 0.8;
+    color: #ffffff;
+}
+
+.ins-inner-box-hover-counts {
+    color: #ffffff;
+    padding-top: 35px;
+}
+
+.ins-inner-box-hover-comments {
+    color: #ffffff;
+    line-height: 50px;
+    font-size: 28px;
+    text-align: left;
+}
+
+.ins-inner-box-hover-comments i {
+    font-size: 30px;
+    padding-right: 10px;
+    padding-left: 80px;
+    padding-top: 10px;
+    float: left;
+}
+
+.ins-inner-box-hover-likes {
+    color: #ffffff;
+    line-height: 50px;
+    font-size: 28px;
+    text-align: left;
+}
+
+.ins-inner-box-hover-likes i {
+    font-size: 30px;
+    padding-right: 10px;
+    padding-left: 50px;
+    padding-top: 10px;
+    float: left;
+}
+
+.ins-inner-box-hover-caption {
+    color: #ffffff;
+    font-size: 18px;
 }
 
 
@@ -1668,7 +1726,8 @@ ul.cart-list>li.total>.btn:hover {
 
 .footer-main {
     padding: 70px 0px;
-    background: #120f28;
+    background-color: #eaeaea;
+    color: #555;
 }
 
 .footer-main hr {
@@ -1680,7 +1739,6 @@ ul.cart-list>li.total>.btn:hover {
 }
 
 .footer-top-box h3 {
-    color: #ffffff;
     position: relative;
     font-size: 20px;
 }
@@ -1711,7 +1769,6 @@ ul.cart-list>li.total>.btn:hover {
 /*end override template*/
 
 .footer-top-box .list-time li {
-    color: #ffffff;
     font-size: 16px;
     display: block;
     float: none;
@@ -1748,7 +1805,6 @@ ul.cart-list>li.total>.btn:hover {
 
 .footer-top-box p {
     padding-bottom: 5px;
-    color: #cccccc;
 }
 
 .footer-top-box ul {
@@ -1775,9 +1831,12 @@ ul.cart-list>li.total>.btn:hover {
 }
 
 .footer-widget,
-.footer-link,
-.footer-link-contact {
+.footer-link {
     margin-top: 15px;
+}
+
+.footer-link-contact {
+    margin-top: 2px;
 }
 
 .footer-widget h4 {
@@ -1873,17 +1932,15 @@ ul.cart-list>li.total>.btn:hover {
 }
 
 .footer-link-contact h4 {
-    color: #ffffff;
-    font-size: 16px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    letter-spacing: 0px;
+    margin-bottom: 5px;
     position: relative;
-    font-weight: 700;
+    font-size: 18px;
 }
 
 .footer-link-contact h4::before {
-    border-bottom: 3px solid #4c8c40;
+    border-bottom: 2px solid #4c8c40;
     content: "";
     height: 3px;
     width: 100%;
@@ -1905,21 +1962,17 @@ ul.cart-list>li.total>.btn:hover {
 
 .footer-link-contact ul li p {
     padding-left: 25px;
-    color: #cccccc;
     position: relative;
 }
 
 .footer-link-contact ul li p {
     font-size: 16px;
-    color: #cccccc;
     font-weight: 300;
     padding-right: 16px;
     line-height: 24px;
 }
 
-.footer-link-contact ul li p a {
-    color: #cccccc;
-}
+.footer-link-contact ul li p a {}
 
 .footer-link-contact ul li p a:hover {
     color: #4c8c40;
@@ -1929,20 +1982,20 @@ ul.cart-list>li.total>.btn:hover {
 /*------------------------------------------------------------------ Copyright -------------------------------------------------------------------*/
 
 .footer-copyright {
-    background: rgba(18, 15, 40, 0.95);
+    background: #eaeaea;
     padding: 20px 0px;
     position: relative;
+    border-top: 1px solid lightgray;
+    /* background-color: #fff; */
+    color: #555;
 }
 
 .footer-copyright p {
     text-align: center;
-    color: #ffffff;
     font-size: 16px;
 }
 
-.footer-copyright p a {
-    color: #ffffff;
-}
+.footer-copyright p a {}
 
 .footer-copyright p a:hover {
     color: #4c8c40;
@@ -3447,6 +3500,10 @@ ul.cart-list>li.total>.btn:hover {
     border-left: 1px solid #eee;
 }
 
+.find-us-tops-box {
+    padding-top: 40px;
+}
+
 .find-us-header {
     font-size: 32px;
     font-weight: 700;
@@ -3643,13 +3700,13 @@ ul.cart-list>li.total>.btn:hover {
 }
 
 .owl-carousel .owl-item img {
-    height: 180px;
+    height: 250px;
     width: auto;
     margin: auto;
 }
 
 .owl-carousel {
-    background: white;
+    background: whitesmoke;
 }
 
 .owl-item {
@@ -3659,8 +3716,9 @@ ul.cart-list>li.total>.btn:hover {
 .owl-item .item {
     /* box-shadow: 0px 11px 85px 0px rgba(0, 0, 0, 0.2); */
     /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-    box-shadow: 0px 8px 16px -10px rgba(0, 0, 0, 0.2);
-    padding: 5px;
+    /* box-shadow: 0px 8px 16px -10px rgba(0, 0, 0, 0.2);
+    padding: 5px; */
+    background-color: white;
 }
 
 .carousel-item a {
@@ -3701,4 +3759,3 @@ ul.cart-list>li.total>.btn:hover {
 .our-ingredients-container {
     padding-top: 36px;
 }
-
