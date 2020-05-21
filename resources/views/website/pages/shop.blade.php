@@ -41,12 +41,12 @@
                 <!-- <p class="sale">Sale</p> -->
               </div>
               <img src="{{asset($product->main_image_url)}}" class="img-fluid" alt="Image">
-              <div class="mask-icon">               
+              <div class="mask-icon">
                 <a class="cart" href="#" data-toggle="modal" data-target="#quick-shop-modal-{{$product->id}}">Quick Shop</a>
               </div>
             </div>
             <div class="why-text">
-              <h4><a href="{{route('website.products.show',['id' => $product->id, 'slug' => Illuminate\Support\Str::slug($product->name)])}}">{{$product->name}}</a></h4>
+              <h4><a href="{{route('website.products.show',['id' => $product->id, 'slug' => Illuminate\Support\Str::slug($product->name)])}}">{{$product->short_name}}</a></h4>
 {{--              <div class="text-right">--}}
 {{--                <h5> EGP {{moneyFormat($product->price)}}</h5>--}}
 {{--              </div>--}}
