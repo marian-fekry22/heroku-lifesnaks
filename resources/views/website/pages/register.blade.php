@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="row new-account-login">
+    <div class="row">
         <div class="col-md-6 mb-5 mx-auto">
             <form class="mt-3 review-form-box old-form" action="{{route('website.register')}}" method="POST">
                 @csrf

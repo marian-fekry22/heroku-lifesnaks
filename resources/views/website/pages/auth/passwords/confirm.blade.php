@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row new-account-login">
+    <div class="row account-login">
         <div class="col-md-6 mb-5 mt-5 mx-auto">
             <div class="title-left">
                 <h3>Account Confirm</h3>

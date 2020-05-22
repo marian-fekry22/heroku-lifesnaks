@@ -85,14 +85,14 @@
                         @csrf
                         <input type='hidden' name='product_id' value='{{$product->id}}'>
                         <div class="row">
-                            <div class="col-xl-2 col-lg-2 col-md-2 p-0 mt-2">
+                            <div class="col-xl-2 col-lg-2 col-md-2 p-0 mt-2 text-center">
                                 <h5>{{$productDetail->size}}</h5>
                             </div>
-                            <div class="col-xl-2 col-lg-2 col-md-2 p-0 mt-2">
+                            <div class="col-xl-2 col-lg-2 col-md-2 p-0 mt-2 text-center">
                                 <h5> EGP {{moneyFormat($productDetail->price)}}</h5>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 p-0">
-                                <div class="form-group">
+                                <div class="form-group ml-2">
                                     <input class="form-control" name='quantity' value="1" min="1" max="100" type="number">
                                 </div>
                             </div>

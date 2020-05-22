@@ -1,20 +1,13 @@
 @extends('website.layouts.app')
 
 @section('title','Shop')
-<style>
-    meter::-webkit-meter-optimum-value {
-        background: #ffce00;
-    }
-    meter::-moz-meter-bar { /* Firefox Pseudo Class */
-        background: #ffce00;
-    }
-</style>
+
 @section('content')
 <div class="shop-detail-box-main">
     <div class="container">
         <div class="row">
             <div class="col-xl-5 col-lg-5 col-md-6">
-                <div id="carousel-example-1" class="single-product-slider carousel slide" data-interval="false" data-ride="carousel">
+                <div id="carousel-example-1" class="single-product-slider carousel slide carousel-container" data-interval="false" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         @foreach($product->orderedImages as $key => $image)
                         <div class="carousel-item {{$key ? '' : 'active'}}">
@@ -51,10 +44,10 @@
                         @csrf
                         <input type='hidden' name='product_id' value='{{$product->id}}'>
                             <div class="row">
-                                <div class="col-xl-2 col-lg-2 col-md-2">
+                                <div class="col-xl-2 col-lg-2 col-md-2  p-0 mt-2 text-center">
                                     <h5>{{$productDetail->size}}</h5>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2">
+                                <div class="col-xl-2 col-lg-2 col-md-2  p-0 mt-2 text-center">
                                     <h5> EGP {{moneyFormat($productDetail->price)}}</h5>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-2">
