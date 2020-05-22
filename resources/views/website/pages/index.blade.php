@@ -136,6 +136,7 @@
     @endforeach
   </div>
 </div>
+@endif
 <!-- End Instagram Feed  -->
 <!-- Start Blog  -->
 <div class="home-section latest-blog">
@@ -161,5 +162,5 @@
   </div>
 </div>
 <!-- End Blog  -->
-@endif
+
 @endsection
